@@ -1,6 +1,6 @@
 package coreHw2Snake.utilClasses.food;
 
-import coreHw2Snake.utilClasses.Score.GameScore;
+import coreHw2Snake.utilClasses.score.GameScore;
 import coreHw2Snake.utilClasses.snake.CreateSnake;
 import coreHw2Snake.variables.GameFieldVariables;
 import javafx.scene.canvas.GraphicsContext;

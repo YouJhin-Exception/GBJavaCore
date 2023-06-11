@@ -1,4 +1,4 @@
-package coreHw2Snake.utilClasses.Score;
+package coreHw2Snake.utilClasses.score;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
