@@ -69,7 +69,7 @@ public class CreateFood implements GameFieldVariables {
     }
 
     public static void drawPoison(GraphicsContext gc) {
-        gc.drawImage(poisonImage, poisonX * SQUARE_SIZE, poisonY * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+        gc.drawImage(poisonImage, poisonX * SQUARE_SIZE, poisonY * SQUARE_SIZE, SQUARE_SIZE-1, SQUARE_SIZE-1);
     }
 
 }
