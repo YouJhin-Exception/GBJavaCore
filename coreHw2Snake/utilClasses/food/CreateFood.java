@@ -54,7 +54,7 @@ public class CreateFood implements GameFieldVariables {
     public static void generatePoison() {
         start:
         while (true) {
-            poisonX = (int) (Math.random() * ROWS + 1);
+            poisonX = (int) (Math.random() * ROWS-1);
             poisonY = (int) (Math.random() * COLUMNS);
 
             for (Point snake : CreateSnake.snakeBody) {
