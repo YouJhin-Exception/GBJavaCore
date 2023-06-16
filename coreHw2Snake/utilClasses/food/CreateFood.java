@@ -22,6 +22,7 @@ public class CreateFood implements GameFieldVariables {
     public static int poisonY;
     private static Image poisonImage;
 
+    //если дойдут руки, то нужно пофиксить генерацию еды и яда в самой змее
     public static void generateFood() {
         start:
         while (true) {
