@@ -37,6 +37,7 @@ public class CreateFood implements GameFieldVariables {
             foodImage = new Image(FOODS_IMAGE[(int) (Math.random() * FOODS_IMAGE.length)]);
             break;
         }
+
     }
 
     public static void drawFood(GraphicsContext gc) {
@@ -48,28 +49,28 @@ public class CreateFood implements GameFieldVariables {
             CreateSnake.snakeBody.add(new Point(-1, -1));
             generateFood();
             GameScore.score += 1;
+            if (GameScore.score % 3 == 0) {
+                generatePoison();
+            } else {
+                poisonX = -1;
+                poisonY = -1;
+            }
+
         }
+
     }
 
     public static void generatePoison() {
-        start:
-        while (true) {
-            poisonX = (int) (Math.random() * ROWS-1);
-            poisonY = (int) (Math.random() * COLUMNS);
 
-            for (Point snake : CreateSnake.snakeBody) {
-                if (snake.getX() == poisonX && snake.getY() == poisonY) {
-                    continue start;
-                }
+        poisonX = (int) (Math.random() * ROWS);
+        poisonY = (int) (Math.random() * COLUMNS);
 
-            }
-            poisonImage = new Image("coreHw2Snake/img/ic_poison.png");
-            break;
-        }
+        poisonImage = new Image("coreHw2Snake/img/ic_poison.png");
+
     }
 
     public static void drawPoison(GraphicsContext gc) {
-        gc.drawImage(poisonImage, poisonX * SQUARE_SIZE, poisonY * SQUARE_SIZE, SQUARE_SIZE-1, SQUARE_SIZE-1);
+        gc.drawImage(poisonImage, poisonX * SQUARE_SIZE, poisonY * SQUARE_SIZE, SQUARE_SIZE - 3, SQUARE_SIZE - 3);
     }
 
 }

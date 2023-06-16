@@ -27,11 +27,7 @@ public class MovementLauncher implements GameFieldVariables {
         DrawBackGround.drawBackground(gc);
 
         CreateFood.drawFood(gc);
-
-        if (GameScore.score % 3 == 0) {
-            CreateFood.drawPoison(gc);
-        }
-
+        CreateFood.drawPoison(gc);
 
         CreateSnake.drawSnake(gc);
 
@@ -52,8 +48,6 @@ public class MovementLauncher implements GameFieldVariables {
 
         EndGame.gameOver();
         CreateFood.eatFood();
-
-
     }
 
     private static void moveRight() {
