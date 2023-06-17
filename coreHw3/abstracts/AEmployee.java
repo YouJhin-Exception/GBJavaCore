@@ -9,7 +9,11 @@ public abstract class AEmployee {
     private int salary;
 
     public AEmployee() {
-
+        firstName = "John";
+        lastName = "Doe";
+        age = 0;
+        post = "nowhere";
+        salary = 0;
     }
 
     public AEmployee(String firstName, String lastName, int age, String post, int salary) {
