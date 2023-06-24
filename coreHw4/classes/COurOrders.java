@@ -9,5 +9,4 @@ public class COurOrders extends AOrder {
         super(buyer, product, amount);
     }
 
-
 }

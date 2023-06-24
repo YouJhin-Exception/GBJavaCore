@@ -8,10 +8,13 @@ public class AOrder {
 
     private int amount;
 
+    private final int totalPrice;
+
     public AOrder(ABuyer buyer, AProduct product, int amount) {
         this.buyer = buyer;
         this.product = product;
         this.amount = amount;
+        this.totalPrice = product.getPrice() * amount;
     }
 
     public ABuyer getBuyer() {
@@ -40,10 +43,12 @@ public class AOrder {
 
     @Override
     public String toString() {
-        return "Order {" +
+        return "Order{" +
                 buyer +
                 ", product=" + product +
                 ", amount=" + amount +
+                ", totalPrice=" + totalPrice +
                 "}\n";
     }
+
 }

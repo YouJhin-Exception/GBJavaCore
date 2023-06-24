@@ -19,26 +19,14 @@ public class CMakePurchase { //implements IMakePurchase {
 
     public static COurOrders makePurchase(int id, String title, int amount) throws CustomerException, ProductException, AmountException {
 
-
         COurBuyer buyer = null;
         COurProduct product = null;
-
-        if (amount > 100 || amount < 1) {
-            amount = 1;
-            throw new AmountException();
-
-        }
-
 
         for (COurBuyer b : DBBuyers.ourBuyerBase) {
             if (b.getId() == id) {
                 buyer = b;
             }
         }
-        if (buyer == null) {
-            throw new CustomerException();
-        }
-
 
         for (COurProduct p : DBProducts.ourProductsBase) {
             if (p.getTitle().equals(title)) {
@@ -49,6 +37,15 @@ public class CMakePurchase { //implements IMakePurchase {
         if (product == null) {
             throw new ProductException();
         }
+        if (amount > 100 || amount < 1) {
+            amount = 1;
+            throw new AmountException();
+
+        }
+        if (buyer == null) {
+            throw new CustomerException();
+        }
+
 
         countPurchase++;
         return new COurOrders(buyer, product, amount);

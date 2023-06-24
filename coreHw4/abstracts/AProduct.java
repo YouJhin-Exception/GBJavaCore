@@ -1,13 +1,17 @@
 package coreHw4.abstracts;
 
+import coreHw4.enums.CategoryOfProduct;
+
 public abstract class AProduct {
 
     private String title;
     private int price;
+    private CategoryOfProduct category;
 
-    public AProduct(String title, int price) {
+    public AProduct(String title, int price, CategoryOfProduct category) {
         this.title = title;
         this.price = price;
+        this.category = category;
     }
 
     public String getTitle() {
@@ -26,11 +30,17 @@ public abstract class AProduct {
         this.price = price;
     }
 
+    public CategoryOfProduct getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryOfProduct category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
-        return "{" +
-                "title='" + title + '\'' +
-                ", price=" + price +
-                '}';
+        return "{" + "title='" + title + '\'' + ", price=" + price + ", category=" + category + '}';
     }
+
 }
